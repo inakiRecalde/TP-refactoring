@@ -13,7 +13,7 @@ Class {
 { #category : #'instance creation' }
 Vote class >> user: aUser dislikesPublication: aPublication [
 	^ self new
-		user: aUser;
+		user: aUser
 		publication: aPublication;
 		dislike;
 		yourself
@@ -22,8 +22,8 @@ Vote class >> user: aUser dislikesPublication: aPublication [
 { #category : #'instance creation' }
 Vote class >> user: aUser likesPublication: aPublication [
 	^ self new
-		user: aUser;
-		publication: aPublication;
+		user: aUser
+		publication: aPublication
 		yourself
 ]
 
@@ -67,4 +67,10 @@ Vote >> user [
 { #category : #private }
 Vote >> user: anObject [
 	user := anObject
+]
+
+{ #category : #'instance creation' }
+Vote >> user: aUser publication: aPublication [
+		user:= aUser.
+		publication:= aPublication.
 ]

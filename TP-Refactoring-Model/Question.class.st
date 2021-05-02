@@ -16,19 +16,19 @@ Class {
 { #category : #'instance creation' }
 Question class >> newWithTitle: title description: aDescription user: aUser [
 	^ self new
-		title: title;
-		description: aDescription;
-		user: aUser;
+		title: title
+		description: aDescription
+		user: aUser
 		yourself.
 ]
 
 { #category : #'instance creation' }
 Question class >> newWithTitle: title description: aDescription user: aUser topic: aTopic [
 	^ self new
-		title: title;
-		description: aDescription;
-		addTopic: aTopic;
-		user: aUser;
+		title: title
+		description: aDescription
+		user: aUser
+		topic: aTopic
 		yourself.
 ]
 
@@ -49,11 +49,6 @@ Question >> description [
 	^ description
 ]
 
-{ #category : #private }
-Question >> description: anObject [
-	description := anObject
-]
-
 { #category : #'initalize-release' }
 Question >> initialize [
 	answers := OrderedCollection new.
@@ -64,18 +59,14 @@ Question >> initialize [
 
 { #category : #'as yet unclassified' }
 Question >> negativeVotes [
-	| r |
-	r := OrderedCollection new.
-	votes do:[:vote | vote isLike ifFalse:[r add: vote]].
-	^r
+	^ votes reject:[:vote | vote isLike].
+
 ]
 
 { #category : #'as yet unclassified' }
 Question >> positiveVotes [
-	| r |
-	r := OrderedCollection new.
-	votes do:[:vote | vote isLike ifTrue:[r add: vote]].
-	^r
+	^ votes select:[:vote | vote isLike].
+
 ]
 
 { #category : #accessing }
@@ -98,6 +89,21 @@ Question >> title: aTitle [
 	title := aTitle 
 ]
 
+{ #category : #'instance creation' }
+Question >> title: aTitle description: aDescription user: aUser [
+	title:= aTitle.
+	description:= aDescription .
+	user:= aUser.
+]
+
+{ #category : #'instance creation' }
+Question >> title: aTitle description: aDescription user: aUser topic: aTopic [
+		
+		self title: aTitle description: aDescription user: aUser.
+		topics add: aTopic.
+		
+]
+
 { #category : #accessing }
 Question >> topics [
 	^topics 
@@ -106,11 +112,6 @@ Question >> topics [
 { #category : #accessing }
 Question >> user [
 	^ user
-]
-
-{ #category : #private }
-Question >> user: anObject [
-	user := anObject
 ]
 
 { #category : #accessing }

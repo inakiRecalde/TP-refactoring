@@ -14,10 +14,10 @@ Class {
 { #category : #'instance creation' }
 Answer class >> new: anAnswer user: aUser question: aQuestion [
 	^ self new
-		description: anAnswer;
-		user: aUser;
-		question: aQuestion;
-		yourself
+		description: anAnswer
+		user: aUser
+		question: aQuestion
+		yourself .
 ]
 
 { #category : #adding }
@@ -30,9 +30,11 @@ Answer >> description [
 	^ description
 ]
 
-{ #category : #private }
-Answer >> description: anObject [
-	description := anObject
+{ #category : #'as yet unclassified' }
+Answer >> description: anAnswer user: aUser question: aQuestion [
+	description := anAnswer .
+	user:= aUser.
+	question := aQuestion.
 ]
 
 { #category : #initialize }
@@ -63,11 +65,6 @@ Answer >> positiveVotes [
 	^r
 ]
 
-{ #category : #private }
-Answer >> question: aQuestion [
-	question := aQuestion 
-]
-
 { #category : #accessing }
 Answer >> timestamp [
 	^ timestamp
@@ -81,11 +78,6 @@ Answer >> timestamp: anObject [
 { #category : #accessing }
 Answer >> user [
 	^ user
-]
-
-{ #category : #private }
-Answer >> user: anObject [
-	user := anObject
 ]
 
 { #category : #accessing }

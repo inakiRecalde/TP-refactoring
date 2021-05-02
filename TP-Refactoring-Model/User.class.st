@@ -115,6 +115,13 @@ User >> username: anObject [
 	username := anObject
 ]
 
+{ #category : #'instance-creation' }
+User >> username: aUsername password: aPassword questionRetriever: aQuestionRetriever [
+		username:= aUsername.
+		password:= aPassword.
+		questionRetriever:= aQuestionRetriever.
+]
+
 { #category : #accessing }
 User >> votes [
 	^ votes
