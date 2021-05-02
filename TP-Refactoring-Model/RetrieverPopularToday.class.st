@@ -5,11 +5,15 @@ Class {
 }
 
 { #category : #'as yet unclassified' }
-RetrieverPopularToday >> retriveQuestionz: aUser [
-	| popularTCol averageVotes temp qRet |
-	popularTCol := OrderedCollection new.
-			cuoora questions do:[:q | (q timestamp asDate = Date today) ifTrue: [popularTCol add: q]].
-			averageVotes := (cuoora questions sum: [:q | q positiveVotes size ]) / popularTCol size.
-			temp := (popularTCol select:[:q | q positiveVotes size >= averageVotes ]).
-				^qRet reject:[:q | q user = aUser].
+RetrieverPopularToday >> popularCol [
+	^cuoora questions select:[:q | (q timestamp asDate = Date today )].
+]
+
+{ #category : #'as yet unclassified' }
+RetrieverPopularToday >> retriveQuestions: aUser [
+	^ (self ordenarCol: 
+		(self popularCol select: [:q | q positiveVotes size >= 
+			((cuoora questions sumNumbers: [:qu | qu positiveVotes size ]) / self popularCol size) ])	 
+		de: aUser).
+							
 ]
