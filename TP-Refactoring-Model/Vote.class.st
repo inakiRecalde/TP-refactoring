@@ -44,29 +44,14 @@ Vote >> isLike [
 	^ isLike
 ]
 
-{ #category : #private }
-Vote >> like [
-	isLike := true.
-]
-
 { #category : #accessing }
 Vote >> publication [
 	^ publication
 ]
 
-{ #category : #private }
-Vote >> publication: anObject [
-	publication := anObject
-]
-
 { #category : #accessing }
 Vote >> user [
 	^ user
-]
-
-{ #category : #private }
-Vote >> user: anObject [
-	user := anObject
 ]
 
 { #category : #'instance creation' }

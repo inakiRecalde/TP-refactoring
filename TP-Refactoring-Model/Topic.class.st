@@ -27,11 +27,6 @@ Topic >> description [
 	^ description
 ]
 
-{ #category : #accessing }
-Topic >> description: anObject [
-	description := anObject
-]
-
 { #category : #initialize }
 Topic >> initialize [
 	questions := OrderedCollection new.
@@ -40,11 +35,6 @@ Topic >> initialize [
 { #category : #accessing }
 Topic >> name [
 	^name
-]
-
-{ #category : #accessing }
-Topic >> name: anObject [
-	name := anObject
 ]
 
 { #category : #'intance creation' }

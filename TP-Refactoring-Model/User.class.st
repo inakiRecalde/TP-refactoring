@@ -75,19 +75,9 @@ User >> password [
 	^ password
 ]
 
-{ #category : #private }
-User >> password: anObject [
-	password := anObject
-]
-
 { #category : #accessing }
 User >> questionRetriever [
 	^ questionRetriever
-]
-
-{ #category : #private }
-User >> questionRetriever: aQuestionRetriever [
-	questionRetriever := aQuestionRetriever.
 ]
 
 { #category : #accessing }
@@ -108,11 +98,6 @@ User >> topics [
 { #category : #accessing }
 User >> username [
 	^ username
-]
-
-{ #category : #private }
-User >> username: anObject [
-	username := anObject
 ]
 
 { #category : #'instance-creation' }
