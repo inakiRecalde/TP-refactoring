@@ -5,8 +5,8 @@ Class {
 }
 
 { #category : #'as yet unclassified' }
-RetrieverTopics >> retriveQuestions: aUser [
+RetrieverTopics >> retrieveQuestions: aUser [
 		^	(self ordenarCol: 
-						(aUser topics collect:[ :topic | topic questions ]) 
+						(aUser topics flatCollect:[ :topic | topic questions ]) 
 					 de: aUser ).
 ]

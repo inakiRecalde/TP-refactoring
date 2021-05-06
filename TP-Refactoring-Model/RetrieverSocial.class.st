@@ -5,9 +5,9 @@ Class {
 }
 
 { #category : #'as yet unclassified' }
-RetrieverSocial >> retriveQuestions: aUser [
+RetrieverSocial >> retrieveQuestions: aUser [
 			^ (self ordenarCol: 
-					(aUser following collect:[ :follow | follow questions ]) 
+					(aUser following flatCollect:[ :follow | follow questions ]) 
 					de: aUser )
 						
 ]

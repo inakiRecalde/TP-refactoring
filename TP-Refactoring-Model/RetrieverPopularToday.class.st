@@ -10,10 +10,10 @@ RetrieverPopularToday >> popularCol [
 ]
 
 { #category : #'as yet unclassified' }
-RetrieverPopularToday >> retriveQuestions: aUser [
+RetrieverPopularToday >> retrieveQuestions: aUser [
 	^ (self ordenarCol: 
 		(self popularCol select: [:q | q positiveVotes size >= 
-			((cuoora questions sumNumbers: [:qu | qu positiveVotes size ]) / self popularCol size) ])	 
+			((cuoora questions sum: [:qu | qu positiveVotes size ]) / self popularCol size) ])	 
 		de: aUser).
 							
 ]

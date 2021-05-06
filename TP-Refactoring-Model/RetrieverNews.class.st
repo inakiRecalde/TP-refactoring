@@ -5,7 +5,7 @@ Class {
 }
 
 { #category : #'as yet unclassified' }
-RetrieverNews >> retriveQuestions: aUser [
+RetrieverNews >> retrieveQuestions: aUser [
 	^ (self ordenarCol: (cuoora questions 
 			select: [:q | (q timestamp asDate = Date today)]) de: aUser).
 				

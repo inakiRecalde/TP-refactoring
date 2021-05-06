@@ -84,11 +84,6 @@ Question >> title [
 	^title 
 ]
 
-{ #category : #accessing }
-Question >> title: aTitle [
-	title := aTitle 
-]
-
 { #category : #'instance creation' }
 Question >> title: aTitle description: aDescription user: aUser [
 	title:= aTitle.
